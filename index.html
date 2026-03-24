@@ -645,14 +645,16 @@
             display: none; 
             position: fixed;
             top: 70px; 
-            left: 0;
-            width: 100%;
-            height: auto;
+            right: 0; /* 右端に配置 */
+            left: auto;
+            width: 60%; /* 幅を約半分に調整 */
+            height: calc(100vh - 70px); /* 画面下まで伸ばす */
             background-color: var(--bg-white);
             flex-direction: column;
             padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: -4px 4px 10px rgba(0,0,0,0.1);
             z-index: 1000;
+            overflow-y: auto;
         }
         .global-nav.active {
             display: flex;

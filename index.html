@@ -26,6 +26,7 @@
         color: var(--text-main);
         background-color: var(--bg-white);
         line-height: 1.8;
+        font-size: 16px; /* 基本フォントサイズを大きく */
     }
 
     a {
@@ -53,12 +54,12 @@
     }
 
     section {
-        padding: 100px 0; /* 少し余白を広く */
+        padding: 100px 0;
     }
 
     .section-title {
         text-align: center;
-        font-size: 32px;
+        font-size: 34px; /* 32->34 */
         color: var(--primary-color);
         margin-bottom: 50px;
         font-weight: 900;
@@ -75,7 +76,7 @@
     }
 
     .sub-title {
-        font-size: 20px;
+        font-size: 22px; /* 20->22 */
         color: var(--primary-color);
         font-weight: 700;
         margin-bottom: 20px;
@@ -107,7 +108,7 @@
         align-items: center;
         padding: 10px 30px;
         box-sizing: border-box;
-        height: 80px; /* ヘッダーの高さを固定 */
+        height: 80px;
     }
 
     .logo-area {
@@ -116,13 +117,13 @@
     }
 
     .logo-sub {
-        font-size: 11px;
+        font-size: 13px; /* 11->13 */
         color: var(--text-light);
         margin-bottom: 1px;
     }
 
     .logo-main {
-        font-size: 22px;
+        font-size: 24px; /* 22->24 */
         font-weight: 900;
         color: var(--primary-color);
         letter-spacing: 1px;
@@ -136,12 +137,12 @@
 
     .nav-list {
         display: flex;
-        gap: 12px;
+        gap: 15px; /* メニュー間隔を少し広げる */
     }
 
     .nav-list a {
         font-weight: 700;
-        font-size: 13px;
+        font-size: 15px; /* 13->15 */
         transition: color 0.3s;
         padding: 5px 0;
     }
@@ -153,10 +154,10 @@
     .cta-button-header {
         background-color: var(--accent-color);
         color: #fff;
-        padding: 8px 15px;
+        padding: 10px 18px;
         border-radius: 50px;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 15px; /* 13->15 */
         transition: all 0.3s ease;
         margin-left: 5px;
     }
@@ -168,7 +169,7 @@
 
     /* ハンバーガーアイコン */
     .hamburger {
-        display: none; /* デフォルトは非表示 */
+        display: none;
         background: none;
         border: none;
         cursor: pointer;
@@ -189,7 +190,6 @@
         margin-bottom: 0;
     }
 
-    /* ハンバーガーアイコンのアニメーション */
     .hamburger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -200,24 +200,22 @@
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* スマホ用CTAリンク */
     .cta-nav-item {
-        display: none; /* デフォルトは非表示 */
+        display: none;
     }
 
     /* ヒーローセクション */
     .hero {
-        padding-top: 130px; /* ヘッダー分 */
-        position: relative; /* オーバーレイ用 */
-        background-image: url('images/main.jpg'); /* 背景画像を設定 */
-        background-size: cover; /* 画像全体をカバー */
-        background-position: center; /* 中央寄せ */
+        padding-top: 130px;
+        position: relative;
+        background-image: url('images/main.jpg');
+        background-size: cover;
+        background-position: center;
         min-height: 85vh;
         display: flex;
         align-items: center;
     }
     
-    /* 可読性確保のための黒オーバーレイ */
     .hero::before {
         content: '';
         position: absolute;
@@ -225,43 +223,49 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.4); /* 黒の半透明オーバーレイ */
+        background-color: rgba(0, 0, 0, 0.2); 
         z-index: 1;
     }
     
-    /* コンテンツをオーバーレイの上に配置 */
     .hero .container {
         position: relative;
         z-index: 2;
     }
     
+    /* ▼ 読みやすくするための背景ボックスデザイン（黒の半透明） ▼ */
     .hero-content {
-        max-width: 650px;
+        max-width: 700px;
+        background: rgba(0, 0, 0, 0.65); /* 黒の半透明背景に変更 */
+        padding: 40px 45px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        backdrop-filter: blur(8px); /* すりガラス効果を少し強調 */
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* テキストの色を白に */
     .hero-catchphrase {
-        font-size: 52px;
+        font-size: 48px;
         line-height: 1.3;
-        color: #fff; 
+        color: #fff; /* 文字を白に変更 */
         font-weight: 900;
-        margin: 0 0 25px 0;
+        margin: 0 0 20px 0;
     }
 
     .hero-catchphrase span {
-        font-size: 32px;
+        font-size: 28px;
         display: block;
-        margin-bottom: 5px;
-        color: var(--secondary-color); 
+        margin-bottom: 8px;
+        color: var(--secondary-color); /* 黒背景に映える明るいティールに変更 */
     }
 
     .hero-sub {
-        font-size: 18px;
-        color: #fff; 
-        margin-bottom: 40px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.9); /* 文字を白に近い色に変更 */
+        margin-bottom: 35px;
         font-weight: bold;
         line-height: 1.8;
     }
+    /* ▲ 読みやすくするための背景ボックスデザイン ▲ */
 
     .cta-button-large {
         display: inline-block;
@@ -269,7 +273,7 @@
         color: #fff;
         padding: 18px 45px;
         border-radius: 50px;
-        font-size: 20px;
+        font-size: 22px; /* 20->22 */
         font-weight: bold;
         box-shadow: 0 6px 15px rgba(246, 139, 30, 0.3);
         transition: all 0.3s ease;
@@ -295,6 +299,7 @@
 
     .about-text {
         flex: 1;
+        font-size: 18px; /* 本文を大きく */
     }
 
     .about-image {
@@ -319,12 +324,13 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        font-size: 18px; /* 箇条書きを大きく */
     }
 
     .feature-item-simple::before {
         content: '✓';
         color: var(--secondary-color);
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 900;
     }
 
@@ -333,7 +339,6 @@
         background-color: var(--bg-light); 
     }
 
-    /* 3列2行のブロックを正しく並べるためのCSS */
     .service-grid {
         display: flex;
         flex-wrap: wrap;
@@ -343,11 +348,11 @@
     }
 
     .service-card {
-        background: var(--bg-white); /* 白に変更 */
+        background: var(--bg-white);
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        width: calc(33.333% - 20px); /* これで3列になります */
+        width: calc(33.333% - 20px);
         box-sizing: border-box;
     }
 
@@ -358,15 +363,15 @@
     }
 
     .service-title {
-        font-size: 19px;
+        font-size: 20px; /* 19->20 */
         color: var(--primary-color);
         margin-bottom: 10px;
         font-weight: bold;
     }
 
     .service-desc {
-        font-size: 14px;
-        color: var(--text-light);
+        font-size: 16px; /* 14->16 */
+        color: var(--text-main);
         text-align: left;
     }
 
@@ -393,6 +398,7 @@
         padding: 15px 10px;
         border-bottom: 1px dashed #ddd;
         text-align: left;
+        font-size: 18px; /* 全体を大きく */
     }
     .price-table tr:last-child th, .price-table tr:last-child td {
         border-bottom: none;
@@ -405,11 +411,11 @@
     .price-table td {
         font-weight: bold;
         color: var(--primary-color);
-        font-size: 18px;
+        font-size: 20px; /* 18->20 */
     }
     .price-note {
         margin-top: 25px;
-        font-size: 14px;
+        font-size: 16px; /* 14->16 */
         color: var(--text-light);
         background-color: var(--bg-white);
         padding: 20px;
@@ -442,20 +448,20 @@
     .step-num {
         font-weight: 900;
         color: var(--accent-color);
-        font-size: 18px;
+        font-size: 20px; /* 18->20 */
         margin-right: 20px;
-        flex: 0 0 70px;
+        flex: 0 0 80px;
         letter-spacing: 1px;
     }
     .step-text {
         font-weight: bold;
         color: var(--text-main);
-        font-size: 16px;
+        font-size: 18px; /* 16->18 */
     }
     .flow-arrow {
         text-align: center;
         color: var(--secondary-color);
-        font-size: 24px;
+        font-size: 26px;
         font-weight: bold;
         margin: 10px 0;
     }
@@ -484,12 +490,12 @@
     }
 
     .profile-name-sub {
-        font-size: 14px;
+        font-size: 15px; /* 14->15 */
         color: var(--text-light);
     }
 
     .profile-name {
-        font-size: 24px;
+        font-size: 26px; /* 24->26 */
         font-weight: bold;
         color: var(--primary-color);
         margin-top: 5px;
@@ -522,6 +528,7 @@
 
     .professional-text {
         flex: 1;
+        font-size: 17px;
     }
 
     .professional-list-area {
@@ -535,12 +542,45 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px 20px;
-        font-size: 15px;
+        font-size: 17px; /* 15->17 */
         color: #fff;
     }
 
     .pro-list li {
         width: calc(50% - 10px);
+    }
+
+    /* noteボタンのスタイル */
+    .note-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+
+    .note-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .note-logo-text {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 900;
+        font-size: 26px;
+        color: #41C9B4; /* noteのエメラルドグリーン */
+        letter-spacing: -1px;
+        margin-right: 12px;
+    }
+
+    .note-button-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
     }
 
     /* CTAセクション */
@@ -552,7 +592,7 @@
     }
 
     .cta-title {
-        font-size: 32px;
+        font-size: 34px;
         font-weight: 900;
         margin-bottom: 30px;
         color: #fff; 
@@ -572,7 +612,7 @@
     }
 
     .cta-desc {
-        font-size: 17px;
+        font-size: 19px; /* 17->19 */
         margin-bottom: 40px;
         max-width: 700px;
         margin-left: auto;
@@ -585,10 +625,9 @@
         color: #ccc;
         padding: 30px 0;
         text-align: center;
-        font-size: 12px;
+        font-size: 14px; /* 12->14 */
     }
 
-    /* スムーズスクロールのオフセット調整（ヘッダー分） */
     section {
         scroll-margin-top: 80px;
     }
@@ -624,7 +663,7 @@
             gap: 0;
         }
         .nav-list a {
-            font-size: 15px;
+            font-size: 18px; /* スマホ時のメニュー文字を大きく 15->18 */
             display: block;
             width: 100%;
             padding: 15px 0;
@@ -647,22 +686,33 @@
         .cta-nav-item {
             display: block;
             margin-top: 20px;
+            text-align: center;
         }
-        .cta-button-mobile {
+        .nav-list a.cta-button-mobile {
             display: inline-block;
+            width: auto;
             background-color: var(--accent-color);
             color: #fff;
-            padding: 10px 20px;
+            padding: 14px 45px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 14px;
-            text-align: center;
+            font-size: 16px; /* 14->16 */
+            border-bottom: none;
+        }
+        .nav-list a.cta-button-mobile:hover {
+            border-bottom: none;
+            background-color: #e87e1a;
         }
         
         .header > .cta-button-header {
             display: none;
         }
         
+        /* レスポンシブ時の背景ボックス調整 */
+        .hero-content {
+            padding: 30px;
+        }
+
         .about-grid, .profile-grid, .professional-grid {
             flex-direction: column;
         }
@@ -670,28 +720,30 @@
             flex: auto;
             width: 100%;
         }
-        /* タブレットでの2列表示用CSS */
         .service-card {
             width: calc(50% - 15px);
         }
         .cta-title {
-            font-size: 26px;
+            font-size: 28px; /* 26->28 */
             padding: 15px 45px;
             border-radius: 80px;
         }
     }
     @media (max-width: 600px) {
+        /* レスポンシブ時の背景ボックス調整 */
+        .hero-content {
+            padding: 25px 20px;
+        }
         .hero-catchphrase {
-            font-size: 38px;
+            font-size: 32px; 
         }
         .hero-catchphrase span {
-            font-size: 22px;
+            font-size: 20px; 
         }
-        .hero-quote {
-            font-size: 16px;
-            padding: 15px;
+        .hero-sub {
+            font-size: 16px; 
         }
-        /* スマホでの1列表示用CSS */
+
         .service-card {
             width: 100%;
         }
@@ -718,6 +770,15 @@
         }
         .step-num {
             margin-bottom: 5px;
+        }
+        .note-button {
+            padding: 10px 20px;
+        }
+        .note-logo-text {
+            font-size: 22px;
+        }
+        .note-button-text {
+            font-size: 14px;
         }
     }
 </style>
@@ -761,7 +822,7 @@
                         中野区を中心とした訪問自費リハビリ<br>※東京都近郊エリアへの訪問も承ります（別途料金にて対応）
                     </p>
                     
-                    <a href="#cta" class="cta-button-large">無料体験に申し込む</a>
+                    <a href="#cta" class="cta-button-large">無料体験・相談</a>
                 </div>
             </div>
         </section>
@@ -778,7 +839,7 @@
                 </div>
 
                 <div style="text-align: center; margin-bottom: 50px;">
-                    <div style="display: inline-block; text-align: center; font-size: 18px; font-weight: bold; color: var(--primary-color); background: var(--bg-light); padding: 20px 30px; border-radius: 8px; border-bottom: 5px solid var(--accent-color);">
+                    <div style="display: inline-block; text-align: center; font-size: 20px; font-weight: bold; color: var(--primary-color); background: var(--bg-light); padding: 20px 30px; border-radius: 8px; border-bottom: 5px solid var(--accent-color);">
                         リハビリテーションとは「自分らしく生きる」という大きな意味があります。<br>
                         たとえ障害や疾患があっても自分のやりたいことができるように！
                     </div>
@@ -795,7 +856,7 @@
                         <h3 class="sub-title" style="justify-content: flex-start;">20年以上の豊富な臨床経験</h3>
                         
                         <h4 style="color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">略歴</h4>
-                        <ul style="font-size: 15px; border-left: 2px solid var(--secondary-color); padding-left: 15px; margin: 0;">
+                        <ul style="font-size: 16px; border-left: 2px solid var(--secondary-color); padding-left: 15px; margin: 0;">
                             <li>2004年 作業療法士資格取得</li>
                             <li>小平緑成会病院 5年間勤務</li>
                             <li>清川病院 リハビリテーション科科長経験者 2年担当</li>
@@ -811,8 +872,8 @@
             <div class="container">
                 <h2 class="section-title">リハビリ案内</h2>
                 
-                <p style="text-align: center; max-width: 700px; margin: 0 auto;">
-                    <strong>訪問リハビリのため、理学療法士、作業療法士関係なくほとんどのリハビリを提供します。</strong>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto; font-size: 18px;">
+                    <strong>訪問リハビリのため、理学療法士、作業療法士関係なく<br>ほとんどのリハビリを提供します。</strong>
                 </p>
 
                 <h3 class="sub-title" style="margin-top: 50px;">一人ひとりの症状に合わせた様々なリハビリ</h3>
@@ -858,10 +919,6 @@
 
                 <div class="price-box">
                     <h3 class="sub-title" style="justify-content: center; margin-bottom: 30px;">リハビリ費用</h3>
-                    
-                    <p style="text-align: center; font-weight: bold; color: var(--primary-color); font-size: 18px; margin-bottom: 30px;">
-                        健康第一の人生を送るためのお手伝いをします
-                    </p>
 
                     <table class="price-table">
                         <tr>
@@ -882,7 +939,7 @@
                         </tr>
                     </table>
 
-                    <h4 style="color: var(--primary-color); margin-top: 30px; font-size: 18px;">リモート・ご相談</h4>
+                    <h4 style="color: var(--primary-color); margin-top: 30px; font-size: 20px;">リモート・ご相談</h4>
                     <table class="price-table">
                         <tr>
                             <th>ウェブでのリモートリハビリ</th>
@@ -934,9 +991,14 @@
                 <div class="professional-grid">
                     <div class="professional-text">
                         <h3 class="sub-title">臨床経験に基づいた専門的な情報</h3>
-                        <p>リハビリテーション科科長としての経験、訪問リハビリでの経験に基づき、ADL訓練、座位保持、バランス機能、感覚訓練、筋緊張、運動イメージなど、専門的な視点からの解説・リハビリを提供します。チャット、Zoomによる指導や助言も行っています。</p>
+                        <p style="margin-bottom: 20px;">リハビリテーション科科長としての経験、訪問リハビリでの経験に基づき、noteでノウハウを公開しています。<br>ご活用ください。ご質問も受け付けております。</p>
+                        <a href="https://note.com/info" target="_blank" rel="noopener noreferrer" class="note-button">
+                            <span class="note-logo-text">note</span>
+                            <span class="note-button-text">ノウハウ公開中！記事を読む</span>
+                        </a>
                     </div>
                     <div class="professional-list-area">
+                        <h3 class="sub-title">事例</h3>
                         <ul class="pro-list">
                             <li>ADL訓練</li>
                             <li>座位、座位バランス</li>
@@ -959,15 +1021,14 @@
                 <h2 class="cta-title">無料体験・相談</h2>
                 
                 <p class="cta-desc">
-                    「どのような体の状態で、どのようなリハビリが必要か？」、費用のことなど、何でもお問い合わせください。<br>
-                    <strong>無料体験、メール相談</strong>も受け付けています。
+                    「どのような体の状態で、どのようなリハビリが必要か？」、何でもお問い合わせください。<br>
+                    <strong>無料体験の日程を調整いたします。</strong>
                 </p>
                 
                 <div style="margin-top: 50px; border-top: 1px solid rgba(43, 122, 120, 0.2); padding-top: 40px;">
-                    <p>お電話・メールでのお問い合わせ</p>
-                    <p style="font-size: 32px; font-weight: bold; margin: 10px 0;">FAX: 03-3361-3762</p>
-                    <p>E-mail: akitoshiriha1@gmail.com</p>
-                    <p style="font-size: 18px; font-weight: bold; margin-top: 20px;">訪問エリア：中野区・杉並区・新宿区周辺</p>
+                    <p style="font-size: 34px; font-weight: bold; margin: 10px 0;"><a href="tel:0333613762">TEL: 03-3361-3762</a></p>
+                    <p style="font-size: 18px; font-weight: bold;"><a href="mailto:akitoshiriha1@gmail.com">E-mail: akitoshiriha1@gmail.com</a></p>
+                    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">訪問エリア：中野区・杉並区・新宿区周辺</p>
                 </div>
             </div>
         </section>
